@@ -26,8 +26,8 @@ namespace dndCC.Views
 
             var character = new Character
             {
-                Text = "Character 1",
-                Description = "This is an Character description."
+                Name = "Character 1",
+                Class = "This is an Character description."
             };
 
             viewModel = new CharacterDetailViewModel(character);

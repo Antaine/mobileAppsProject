@@ -19,8 +19,8 @@ namespace dndCC.Views
 
             Character = new Character
             {
-                Text = "Character name",
-                Description = "This is an Character description."
+                Name = "Character name",
+                Class = "Bard"
             };
 
             BindingContext = this;

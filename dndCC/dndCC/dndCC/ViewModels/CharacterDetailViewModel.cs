@@ -9,7 +9,7 @@ namespace dndCC.ViewModels
         public Character Character { get; set; }
         public CharacterDetailViewModel(Character character = null)
         {
-            Title = character?.Text;
+            Title = character?.Name;
             Character = character;
         }
     }
