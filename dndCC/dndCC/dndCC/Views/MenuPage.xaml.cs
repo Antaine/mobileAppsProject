@@ -11,15 +11,15 @@ namespace dndCC.Views
     public partial class MenuPage : ContentPage
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        List<HomeMenuItem> menuItems;
+        List<HomeMenu> menuItems;
         public MenuPage()
         {
             InitializeComponent();
 
-            menuItems = new List<HomeMenuItem>
+            menuItems = new List<HomeMenu>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenu {Id = MenuType.Browse, Title="Browse" },
+                new HomeMenu {Id = MenuType.About, Title="About" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -30,7 +30,7 @@ namespace dndCC.Views
                 if (e.SelectedItem == null)
                     return;
 
-                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                var id = (int)((HomeMenu)e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
             };
         }

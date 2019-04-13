@@ -11,9 +11,9 @@ namespace dndCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        CharacterDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public ItemDetailPage(CharacterDetailViewModel viewModel)
         {
             InitializeComponent();
 
@@ -24,13 +24,13 @@ namespace dndCC.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var character = new Character
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Text = "Character 1",
+                Description = "This is an Character description."
             };
 
-            viewModel = new ItemDetailViewModel(item);
+            viewModel = new CharacterDetailViewModel(character);
             BindingContext = viewModel;
         }
     }

@@ -12,7 +12,7 @@ namespace dndCC.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Character> DataStore => DependencyService.Get<IDataStore<Character>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy
@@ -28,11 +28,11 @@ namespace dndCC.ViewModels
             set { SetProperty(ref title, value); }
         }
 
-        protected bool SetProperty<T>(ref T backingStore, T value,
+        protected bool SetProperty<C>(ref C backingStore, C value,
             [CallerMemberName]string propertyName = "",
             Action onChanged = null)
         {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+            if (EqualityComparer<C>.Default.Equals(backingStore, value))
                 return false;
 
             backingStore = value;

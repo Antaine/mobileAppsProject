@@ -4,14 +4,14 @@ using System.Text;
 
 namespace dndCC.Models
 {
-    public enum MenuItemType
+    public enum MenuType
     {
         Browse,
         About
     }
-    public class HomeMenuItem
+    public class HomeMenu
     {
-        public MenuItemType Id { get; set; }
+        public MenuType Id { get; set; }
 
         public string Title { get; set; }
     }

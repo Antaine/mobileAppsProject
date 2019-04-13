@@ -16,29 +16,31 @@ namespace dndCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        CharactersViewModel viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new CharactersViewModel();
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnCharacterSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
-            if (item == null)
+            var character = args.SelectedItem as Character;
+            if (character == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new ItemDetailPage(new CharacterDetailViewModel(character)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            //Chwck
+            CharactersListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddCharacter_Clicked(object sender, EventArgs e)
         {
+            //Check
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
 
@@ -46,8 +48,8 @@ namespace dndCC.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            if (viewModel.Characters.Count == 0)
+                viewModel.LoadCharactersCommand.Execute(null);
         }
     }
 }

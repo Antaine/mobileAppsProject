@@ -2,7 +2,7 @@
 
 namespace dndCC.Models
 {
-    public class Item
+    public class Character
     {
         public string Id { get; set; }
         public string Text { get; set; }

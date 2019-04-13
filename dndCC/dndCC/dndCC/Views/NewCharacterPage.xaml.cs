@@ -11,16 +11,16 @@ namespace dndCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Character Character { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Character = new Character
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Text = "Character name",
+                Description = "This is an Character description."
             };
 
             BindingContext = this;
@@ -28,7 +28,7 @@ namespace dndCC.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddCharacter", Character);
             await Navigation.PopModalAsync();
         }
 
