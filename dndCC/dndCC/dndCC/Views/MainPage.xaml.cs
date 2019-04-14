@@ -17,7 +17,7 @@ namespace dndCC.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuType.DisplayCharacters, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,7 +26,7 @@ namespace dndCC.Views
             {
                 switch (id)
                 {
-                    case (int)MenuType.Browse:
+                    case (int)MenuType.DisplayCharacters:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuType.About:

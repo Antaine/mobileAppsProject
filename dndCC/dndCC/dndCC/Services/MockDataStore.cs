@@ -16,11 +16,7 @@ namespace dndCC.Services
             var mockCharacters = new List<Character>
             {
                 new Character { Id = Guid.NewGuid().ToString(), Name = "First Character", Class="This is an Character Class." },
-                new Character { Id = Guid.NewGuid().ToString(), Name = "Second Character", Class="This is an Character Class." },
-                new Character { Id = Guid.NewGuid().ToString(), Name = "Third Character", Class="This is an Character Class." },
-                new Character { Id = Guid.NewGuid().ToString(), Name = "Fourth Character", Class="This is an Character Class." },
-                new Character { Id = Guid.NewGuid().ToString(), Name = "Fifth Character", Class="This is an Character Class." },
-                new Character { Id = Guid.NewGuid().ToString(), Name = "Sixth Character", Class="This is an Character Class." },
+
             };
 
             foreach (var character in mockCharacters)

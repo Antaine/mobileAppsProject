@@ -4,9 +4,15 @@
              x:Class="dndCC.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="Character Name:" FontSize="Medium" />
         <Label Text="{Binding Character.Name}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
+        <Label Text="Character Race:" FontSize="Medium" />
+        <Label Text="{Binding Character.Race}" FontSize="Small"/>
+        <Label Text="Character Class:" FontSize="Medium" />
         <Label Text="{Binding Character.Class}" FontSize="Small"/>
+        <Label Text="Character Background:" FontSize="Medium" />
+        <Label Text="{Binding Character.Bg}" FontSize="Small"/>
+        <Label Text="Character Alignment:" FontSize="Medium" />
+        <Label Text="{Binding Character.Align}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>

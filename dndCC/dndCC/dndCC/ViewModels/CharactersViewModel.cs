@@ -17,7 +17,7 @@ namespace dndCC.ViewModels
 
         public CharactersViewModel()
         {
-            Title = "Browse";
+            Title = "Display Characters";
             Characters = new ObservableCollection<Character>();
             LoadCharactersCommand = new Command(async () => await ExecuteLoadCharactersCommand());
 
@@ -28,6 +28,7 @@ namespace dndCC.ViewModels
                 Characters.Add(newCharacter);
                 await DataStore.AddCharacterAsync(newCharacter);
             });
+
         }
 
         async Task ExecuteLoadCharactersCommand()

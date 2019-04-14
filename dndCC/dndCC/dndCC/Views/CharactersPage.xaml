@@ -28,14 +28,9 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
-                            <Label Text="{Binding Name}" 
-                                LineBreakMode="NoWrap" 
+                            <Label Text="{Binding displayDetails}"                                  
                                 Style="{DynamicResource ListCharacterTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding Class}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListCharacterDetailTextStyle}"
-                                FontSize="13" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

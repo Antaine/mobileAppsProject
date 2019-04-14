@@ -18,7 +18,7 @@ namespace dndCC.Views
 
             menuItems = new List<HomeMenu>
             {
-                new HomeMenu {Id = MenuType.Browse, Title="Browse" },
+                new HomeMenu {Id = MenuType.DisplayCharacters, Title="Display Characters" },
                 new HomeMenu {Id = MenuType.About, Title="About" }
             };
 
