@@ -16,74 +16,36 @@ namespace dndCC.Views
     {
 
         public Character Character { get; set; }
-     //   public ObservableCollection<FontFamily> Fonts { get => fonts; set => fonts = value; }
-
+        //   public ObservableCollection<FontFamily> Fonts { get => fonts; set => fonts = value; }
+        string race;
         public NewItemPage()
         {
             InitializeComponent();
 
 
-            //Label header = new Label
-            //{
-            //    Text = "Picker",
-            //    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-            //    HorizontalOptions = LayoutOptions.Center
-            //};
-
-            //Picker picker = new Picker
-            //{
-            //    Title = "Color",
-            //    VerticalOptions = LayoutOptions.CenterAndExpand
-            //};
-
-            //foreach (string colorName in nameToColor.Keys)
-            //{
-            //    picker.Items.Add(colorName);
-            //}
-
-            //BoxView boxView = new BoxView
-            //{
-            //    WidthRequest = 150,
-            //    HeightRequest = 150,
-            //    HorizontalOptions = LayoutOptions.Center,
-            //    VerticalOptions = LayoutOptions.CenterAndExpand
-            //};
-
-            /* picker.SelectedIndexChanged += (sender, args) = &gt;
-             {
-                 if (picker.SelectedIndex == -1)
-                 {
-                     boxView.Color = Color.Default;
-                 }
-                 else
-                 {
-                     string colorName = picker.Items[picker.SelectedIndex];
-                     boxView.Color = nameToColor[colorName];
-                 }
-             };*/
-
-            //this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
-
-            //this.Content = new StackLayout
-            //{
-            //    Children =
-            //{
-            //    header,
-            //    picker,
-            //    boxView
-            //}
-            //};
 
             Character = new Character
             {
-
+               
             };
+            racePicker.Items.Add("DragonBorn");
+            racePicker.Items.Add("Dwarf");
+            racePicker.Items.Add("Elf");
+            racePicker.Items.Add("Gnome");
+            racePicker.Items.Add("Half-Elf");
+            racePicker.Items.Add("Half-Orc");
+            racePicker.Items.Add("Halfling");
+            racePicker.Items.Add("Human");
+            racePicker.Items.Add("Tiefling");
+            Character.Race = race;
+
 
             BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+            Character.Race = race;
             MessagingCenter.Send(this, "AddCharacter", Character);
             await Navigation.PopModalAsync();
         }
@@ -92,6 +54,21 @@ namespace dndCC.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        private void racePickerSelected(object sender, EventArgs args)
+        {
+            race = racePicker.Items[racePicker.SelectedIndex];
+           // DisplayAlert(race,"","");
+
+        }
+
+        //void onRaceSelected(object sender, EventArgs args)
+        //{
+        //    Picker racePicker = (Picker)sender;
+        //    int race = racePicker.SelectedIndex;
+        //    racePicker = Items.Clear();
+            
+        //}
     }
 
 }

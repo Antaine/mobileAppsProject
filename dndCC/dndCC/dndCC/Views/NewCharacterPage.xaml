@@ -27,18 +27,8 @@
             <Label Text="Name:" FontSize="Medium" />
             <Entry Text="{Binding Character.Name}" FontSize="Small" />
             <StackLayout>
-                <Picker x:Name="racePicker" Title="Race:" FontSize="Small">
-                    <Picker.Items>
-                        <x:String>DragonBorn</x:String>
-                        <x:String>Dwarf</x:String>
-                        <x:String>Elf</x:String>
-                        <x:String>Gnome</x:String>
-                        <x:String>Half-Elf</x:String>
-                        <x:String>Half-Orc</x:String>
-                        <x:String>Halfling</x:String>
-                        <x:String>Human</x:String>
-                        <x:String>Tiefling</x:String>
-                    </Picker.Items>
+                <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="racePickerSelected">
+
                 </Picker>
             </StackLayout>
             <!--<Editor Text="{Binding Character.Race}" FontSize="Small" Margin="0" />-->
