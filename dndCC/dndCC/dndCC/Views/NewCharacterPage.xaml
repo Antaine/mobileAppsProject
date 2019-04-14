@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows.Foundation.UniversalApiContract"
              x:Class="dndCC.Views.NewItemPage"
              Title="New Item">
     
@@ -25,8 +26,22 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Name:" FontSize="Medium" />
             <Entry Text="{Binding Character.Name}" FontSize="Small" />
-            <Label Text="Race:" FontSize="Medium" />
-            <Editor Text="{Binding Character.Race}" FontSize="Small" Margin="0" />
+            <StackLayout>
+                <Picker x:Name="racePicker" Title="Race:" FontSize="Small">
+                    <Picker.Items>
+                        <x:String>DragonBorn</x:String>
+                        <x:String>Dwarf</x:String>
+                        <x:String>Elf</x:String>
+                        <x:String>Gnome</x:String>
+                        <x:String>Half-Elf</x:String>
+                        <x:String>Half-Orc</x:String>
+                        <x:String>Halfling</x:String>
+                        <x:String>Human</x:String>
+                        <x:String>Tiefling</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <!--<Editor Text="{Binding Character.Race}" FontSize="Small" Margin="0" />-->
             <Label Text="Class:" FontSize="Medium" />
             <Editor Text="{Binding Character.Class}" FontSize="Small" Margin="0" />
             <Label Text="Background:" FontSize="Medium" />
@@ -34,5 +49,6 @@
             <Label Text="Alignment:" FontSize="Medium" />
             <Editor Text="{Binding Character.Align}" FontSize="Small" Margin="0" />
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
