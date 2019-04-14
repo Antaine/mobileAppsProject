@@ -27,17 +27,23 @@
             <Label Text="Name:" FontSize="Medium" />
             <Entry Text="{Binding Character.Name}" FontSize="Small" />
             <StackLayout>
-                <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="racePickerSelected">
+                <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="onRaceSelected">
 
                 </Picker>
             </StackLayout>
             <!--<Editor Text="{Binding Character.Race}" FontSize="Small" Margin="0" />-->
-            <Label Text="Class:" FontSize="Medium" />
-            <Editor Text="{Binding Character.Class}" FontSize="Small" Margin="0" />
-            <Label Text="Background:" FontSize="Medium" />
-            <Editor Text="{Binding Character.Bg}" FontSize="Small" Margin="0" />
-            <Label Text="Alignment:" FontSize="Medium" />
-            <Editor Text="{Binding Character.Align}" FontSize="Small" Margin="0" />
+            <StackLayout>
+                <Picker x:Name="classPicker" Title="Class:" FontSize="Small" SelectedIndexChanged="onClassSelected">
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Picker x:Name="bgPicker" Title="Background:" FontSize="Small" SelectedIndexChanged="onBgSelected">
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Picker x:Name="alnPicker" Title="Alignment:" FontSize="Small" SelectedIndexChanged="onAlnSelected">
+                </Picker>
+            </StackLayout>
         </StackLayout>
 
     </ContentPage.Content>

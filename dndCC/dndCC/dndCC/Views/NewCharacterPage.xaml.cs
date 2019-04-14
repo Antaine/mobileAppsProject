@@ -17,7 +17,11 @@ namespace dndCC.Views
 
         public Character Character { get; set; }
         //   public ObservableCollection<FontFamily> Fonts { get => fonts; set => fonts = value; }
-        string race;
+        string selectedRace;
+        string selectedClass;
+        string selectedBg;
+        string selectedAln;
+
         public NewItemPage()
         {
             InitializeComponent();
@@ -37,15 +41,59 @@ namespace dndCC.Views
             racePicker.Items.Add("Halfling");
             racePicker.Items.Add("Human");
             racePicker.Items.Add("Tiefling");
-            Character.Race = race;
 
+            classPicker.Items.Add("Barbarian");
+            classPicker.Items.Add("Bard");
+            classPicker.Items.Add("Cleric");
+            classPicker.Items.Add("Druid");
+            classPicker.Items.Add("Fighter");
+            classPicker.Items.Add("Monk");
+            classPicker.Items.Add("Paladin");
+            classPicker.Items.Add("Ranger");
+            classPicker.Items.Add("Rogue");
+            classPicker.Items.Add("Sorcerer");
+            classPicker.Items.Add("Warlock");
+            classPicker.Items.Add("Wizard");
+
+            bgPicker.Items.Add("Acolyte");
+            bgPicker.Items.Add("Charlatan");
+            bgPicker.Items.Add("Criminal/Spy");
+            bgPicker.Items.Add("Entertainer");
+            bgPicker.Items.Add("Folk Hero");
+            bgPicker.Items.Add("Gladiator");
+            bgPicker.Items.Add("Guild Artisan/Merchant");
+            bgPicker.Items.Add("Hermit");
+            bgPicker.Items.Add("Knight");
+            bgPicker.Items.Add("Noble");
+            bgPicker.Items.Add("Outlander");
+            bgPicker.Items.Add("Pirate");
+            bgPicker.Items.Add("Sage");
+            bgPicker.Items.Add("Urchin");
+
+            alnPicker.Items.Add("Lawful Good");
+            alnPicker.Items.Add("Lawful Neutral");
+            alnPicker.Items.Add("Lawful Evil");
+            alnPicker.Items.Add("Neutral Good");
+            alnPicker.Items.Add("True Neutral");
+            alnPicker.Items.Add("Neutral Evil");
+            alnPicker.Items.Add("Chaotic Good");
+            alnPicker.Items.Add("Chaotic Neutral");
+            alnPicker.Items.Add("Chaotic Evil");
+
+            Character.Race = selectedRace;
+            Character.Class = selectedClass;
+            Character.Bg = selectedBg;
+            Character.Align = selectedAln;
 
             BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Character.Race = race;
+            Character.Race = selectedRace;
+            Character.Class = selectedClass;
+            Character.Bg = selectedBg;
+            Character.Align = selectedAln;
             MessagingCenter.Send(this, "AddCharacter", Character);
             await Navigation.PopModalAsync();
         }
@@ -55,19 +103,30 @@ namespace dndCC.Views
             await Navigation.PopModalAsync();
         }
 
-        private void racePickerSelected(object sender, EventArgs args)
+        private void onRaceSelected(object sender, EventArgs args)
         {
-            race = racePicker.Items[racePicker.SelectedIndex];
-           // DisplayAlert(race,"","");
+            selectedRace = racePicker.Items[racePicker.SelectedIndex];
 
         }
 
-        //void onRaceSelected(object sender, EventArgs args)
-        //{
-        //    Picker racePicker = (Picker)sender;
-        //    int race = racePicker.SelectedIndex;
-        //    racePicker = Items.Clear();
-            
+        private void onClassSelected(object sender, EventArgs args)
+        {
+            selectedClass = classPicker.Items[classPicker.SelectedIndex];
+
+        }
+
+        private void onBgSelected(object sender, EventArgs args)
+        {
+            selectedBg = bgPicker.Items[bgPicker.SelectedIndex];
+
+        }
+
+        private void onAlnSelected(object sender, EventArgs args)
+        {
+            selectedAln = alnPicker.Items[alnPicker.SelectedIndex];
+
+        }
+
         //}
     }
 

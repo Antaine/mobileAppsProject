@@ -12,7 +12,7 @@ namespace dndCC.Models
         public string Align { get; set; }
         public int lvl { get; set; }
         //Display Details
-        public string displayDetails { get { return Name + " the" + Race + " " + Class; } }
+        public string displayDetails { get { return Name + " the " + Race + " " + Class; } }
         
     }
 }
