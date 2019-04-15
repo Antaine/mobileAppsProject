@@ -19,7 +19,7 @@ namespace dndCC.Views
             menuItems = new List<HomeMenu>
             {
                 new HomeMenu {Id = MenuType.DisplayCharacters, Title="Display Characters" },
-                new HomeMenu {Id = MenuType.About, Title="About" }
+                new HomeMenu {Id = MenuType.Stats, Title="Stats" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

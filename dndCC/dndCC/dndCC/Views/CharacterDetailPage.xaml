@@ -16,5 +16,6 @@
         <Label Text="{Binding Character.Align}" FontSize="Small"/>
         <Label Text="Level:" FontSize="Medium" />
         <Label Text="{Binding Character.Lvl}" FontSize="Small"/>
+        <Button Text="Edit Stats" Clicked="statsClicked"/>
     </StackLayout>
 </ContentPage>

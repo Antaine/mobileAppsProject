@@ -20,6 +20,7 @@ namespace dndCC.Views
         string selectedClass;
         string selectedBg;
         string selectedAln;
+        int selectedLvl;
 
         public NewItemPage()
         {
@@ -79,10 +80,32 @@ namespace dndCC.Views
             alnPicker.Items.Add("Chaotic Neutral");
             alnPicker.Items.Add("Chaotic Evil");
 
+            lvlPicker.Items.Add("1");
+            lvlPicker.Items.Add("2");
+            lvlPicker.Items.Add("3");
+            lvlPicker.Items.Add("4");
+            lvlPicker.Items.Add("5");
+            lvlPicker.Items.Add("6");
+            lvlPicker.Items.Add("7");
+            lvlPicker.Items.Add("8");
+            lvlPicker.Items.Add("9");
+            lvlPicker.Items.Add("10");
+            lvlPicker.Items.Add("11");
+            lvlPicker.Items.Add("12");
+            lvlPicker.Items.Add("13");
+            lvlPicker.Items.Add("14");
+            lvlPicker.Items.Add("15");
+            lvlPicker.Items.Add("16");
+            lvlPicker.Items.Add("17");
+            lvlPicker.Items.Add("18");
+            lvlPicker.Items.Add("19");
+            lvlPicker.Items.Add("20");
+
             Character.Race = selectedRace;
             Character.Class = selectedClass;
             Character.Bg = selectedBg;
             Character.Align = selectedAln;
+            Character.Lvl = selectedLvl;
 
             BindingContext = this;
         }
@@ -93,6 +116,7 @@ namespace dndCC.Views
             Character.Class = selectedClass;
             Character.Bg = selectedBg;
             Character.Align = selectedAln;
+            Character.Lvl = selectedLvl;
             MessagingCenter.Send(this, "AddCharacter", Character);
             await Navigation.PopModalAsync();
         }
@@ -123,6 +147,12 @@ namespace dndCC.Views
         private void onAlnSelected(object sender, EventArgs args)
         {
             selectedAln = alnPicker.Items[alnPicker.SelectedIndex];
+
+        }
+
+        private void onLvlSelected(object sender, EventArgs args)
+        {
+            selectedLvl = Int32.Parse(lvlPicker.Items[lvlPicker.SelectedIndex]);
 
         }
 

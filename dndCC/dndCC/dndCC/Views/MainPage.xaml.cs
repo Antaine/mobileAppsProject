@@ -29,8 +29,8 @@ namespace dndCC.Views
                     case (int)MenuType.DisplayCharacters:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuType.Stats:
+                        MenuPages.Add(id, new NavigationPage(new StatsPage()));
                         break;
                 }
             }

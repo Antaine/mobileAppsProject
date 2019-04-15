@@ -10,7 +10,7 @@ namespace dndCC.Models
         public string Class { get; set; }
         public string Bg { get; set; }
         public string Align { get; set; }
-        public string Lvl { get; set; }
+        public int Lvl { get; set; }
         //Display Details
         public string displayDetails { get { return Name + " the " + Race + " " + Class; } }
         

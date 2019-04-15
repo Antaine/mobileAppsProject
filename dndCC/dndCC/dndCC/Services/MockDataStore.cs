@@ -15,7 +15,7 @@ namespace dndCC.Services
             characters = new List<Character>();
             var mockCharacters = new List<Character>
             {
-                new Character { Id = Guid.NewGuid().ToString(), Name = "First Character", Class="This is an Character Class." },
+                new Character { Id = Guid.NewGuid().ToString(), Name = "First Character", Class="Bard" },
 
             };
 

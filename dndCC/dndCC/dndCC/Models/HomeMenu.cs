@@ -7,7 +7,7 @@ namespace dndCC.Models
     public enum MenuType
     {
         DisplayCharacters,
-        About
+        Stats
     }
     public class HomeMenu
     {

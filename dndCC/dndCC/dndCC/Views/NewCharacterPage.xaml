@@ -44,12 +44,10 @@
                 <Picker x:Name="alnPicker" Title="Alignment:" FontSize="Small" SelectedIndexChanged="onAlnSelected">
                 </Picker>
             </StackLayout>
-            <Label Text="Level:" FontSize="Small" />
-            <Entry Keyboard="Numeric" Text="{Binding Character.Lvl}">
-                <Entry.Behaviors>
-                    <!--<behaviors:EntryLengthValidatorBehavior MaxLength="3" />-->
-                </Entry.Behaviors>
-            </Entry>
+            <StackLayout>
+                <Picker x:Name="lvlPicker" Title="Level:" FontSize="Small" SelectedIndexChanged="onLvlSelected">
+                </Picker>
+            </StackLayout>
         </StackLayout>
 
     </ContentPage.Content>

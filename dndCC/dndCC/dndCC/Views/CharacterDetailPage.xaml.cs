@@ -33,5 +33,10 @@ namespace dndCC.Views
             viewModel = new CharacterDetailViewModel(character);
             BindingContext = viewModel;
         }
+
+        private async void statsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StatsPage());
+        }
     }
 }
