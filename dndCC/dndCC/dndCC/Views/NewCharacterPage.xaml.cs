@@ -14,9 +14,8 @@ namespace dndCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-
+        public static Xamarin.Forms.Keyboard Numeric { get; }
         public Character Character { get; set; }
-        //   public ObservableCollection<FontFamily> Fonts { get => fonts; set => fonts = value; }
         string selectedRace;
         string selectedClass;
         string selectedBg;
@@ -127,7 +126,6 @@ namespace dndCC.Views
 
         }
 
-        //}
     }
 
 }

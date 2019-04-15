@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows.Foundation.UniversalApiContract"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:behaviors="clr-namespace:myApp.Behaviors;assembly=myApp"
              x:Class="dndCC.Views.NewItemPage"
              Title="New Item">
     
@@ -28,10 +30,8 @@
             <Entry Text="{Binding Character.Name}" FontSize="Small" />
             <StackLayout>
                 <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="onRaceSelected">
-
                 </Picker>
             </StackLayout>
-            <!--<Editor Text="{Binding Character.Race}" FontSize="Small" Margin="0" />-->
             <StackLayout>
                 <Picker x:Name="classPicker" Title="Class:" FontSize="Small" SelectedIndexChanged="onClassSelected">
                 </Picker>
@@ -44,6 +44,12 @@
                 <Picker x:Name="alnPicker" Title="Alignment:" FontSize="Small" SelectedIndexChanged="onAlnSelected">
                 </Picker>
             </StackLayout>
+            <Label Text="Level:" FontSize="Small" />
+            <Entry Keyboard="Numeric" Text="{Binding Character.Lvl}">
+                <Entry.Behaviors>
+                    <!--<behaviors:EntryLengthValidatorBehavior MaxLength="3" />-->
+                </Entry.Behaviors>
+            </Entry>
         </StackLayout>
 
     </ContentPage.Content>
