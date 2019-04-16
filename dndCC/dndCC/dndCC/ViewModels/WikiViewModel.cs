@@ -11,14 +11,14 @@ using dndCC.Views;
 
 namespace dndCC.ViewModels
 {
-    public class StatsViewModel : BaseViewModel
+    public class WikiViewModel : BaseViewModel
     {
         public ObservableCollection<Character> Characters { get; set; }
         public Command LoadStatsCommand { get; set; }
 
-        public StatsViewModel()
+        public WikiViewModel()
         {
-            Title = "Display Stats";
+            Title = "Wiki";
             Characters = new ObservableCollection<Character>();
             LoadStatsCommand = new Command(async () => await ExecuteLoadStatsCommand());
 

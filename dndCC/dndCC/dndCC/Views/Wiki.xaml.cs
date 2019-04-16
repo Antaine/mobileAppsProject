@@ -5,16 +5,18 @@ using Xamarin.Forms.Xaml;
 using dndCC.Models;
 using dndCC.Views;
 using dndCC.ViewModels;
+using Windows.UI.Xaml;
+
 namespace dndCC.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StatsPage : ContentPage
+    public partial class Wiki : ContentPage
     {
-        StatsViewModel viewModel;
-        public StatsPage()
+        WikiViewModel viewModel;
+        public Wiki()
         {
             InitializeComponent();
-            BindingContext = viewModel = new StatsViewModel();
+            BindingContext = viewModel = new WikiViewModel();
         }
 
         async void OnCharacterSelected(object sender, SelectedItemChangedEventArgs args)
@@ -35,6 +37,11 @@ namespace dndCC.Views
         //    await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         //}
 
+        private async void OnRaceClicked(object sender, EventArgs e)
+        {
+           await Navigation.PushModalAsync(new NavigationPage(new RacePage()));
+        }
+
 
 
         protected override void OnAppearing()
@@ -43,6 +50,11 @@ namespace dndCC.Views
 
             if (viewModel.Characters.Count == 0)
                 viewModel.LoadStatsCommand.Execute(null);
+        }
+
+        private void racesClicked()
+        {
+
         }
     }
 }

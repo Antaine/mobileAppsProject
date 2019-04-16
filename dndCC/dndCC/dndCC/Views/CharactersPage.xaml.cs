@@ -54,5 +54,6 @@ namespace dndCC.Views
             if (viewModel.Characters.Count == 0)
                 viewModel.LoadCharactersCommand.Execute(null);
         }
+
     }
 }

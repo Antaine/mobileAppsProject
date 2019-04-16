@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="dndCC.Views.StatsPage"
+             x:Class="dndCC.Views.Wiki"
              xmlns:vm="clr-namespace:dndCC.ViewModels"
              Title="{Binding Title}">
         
@@ -15,22 +15,8 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <!--<StackLayout>
-            <Label Text="Character Name:" FontSize="Medium" />
-            <Label Text="{Binding Character.Name}" FontSize="Small" />
-        </StackLayout>
-        <Label Text="Character Race:" FontSize="Medium" />
-        <Label Text="{Binding Character.Race}" FontSize="Small"/>
-        <Label Text="Character Class:" FontSize="Medium" />
-        <Label Text="{Binding Character.Class}" FontSize="Small"/>
-        <Label Text="Character Background:" FontSize="Medium" />
-        <Label Text="{Binding Character.Bg}" FontSize="Small"/>
-        <Label Text="Character Alignment:" FontSize="Medium" />
-        <Label Text="{Binding Character.Align}" FontSize="Small"/>
-        <Label Text="Level:" FontSize="Medium" />
-        <Label Text="{Binding Character.Lvl}" FontSize="Small" />-->
-
-        <!--<Button Text="Edit Stats" Clicked="statsClicked"/>-->
+        <!--<Button Text="Races" Clicked="OnRaceClicked"/>-->
+        <!--<Button Text="Classes" Clicked="classesClicked"/>-->
     </StackLayout>
 
 </ContentPage>

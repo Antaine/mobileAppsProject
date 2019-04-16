@@ -32,7 +32,7 @@ namespace dndCC.Views
             {
                
             };
-            racePicker.Items.Add("DragonBorn");
+            racePicker.Items.Add("Dragonborn");
             racePicker.Items.Add("Dwarf");
             racePicker.Items.Add("Elf");
             racePicker.Items.Add("Gnome");
@@ -112,11 +112,13 @@ namespace dndCC.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+
             Character.Race = selectedRace;
             Character.Class = selectedClass;
             Character.Bg = selectedBg;
             Character.Align = selectedAln;
             Character.Lvl = selectedLvl;
+            addRaceBonus(Character);
             MessagingCenter.Send(this, "AddCharacter", Character);
             await Navigation.PopModalAsync();
         }
@@ -172,8 +174,8 @@ namespace dndCC.Views
 
             if(temp>d2)
             {
-                d2 = temp;
-                temp = roll2;
+               d2 = temp;
+               temp = roll2;
             }
 
             if(temp>d3)
@@ -214,6 +216,70 @@ namespace dndCC.Views
             Character.Int = randomD6();
             Character.Wis = randomD6();
             Character.Cha = randomD6();
+            addRaceBonus(Character);
+        }
+
+        private void addRaceBonus(Character character)
+        {
+            string race = character.Race;
+            if (race == "Dragonborn")
+            {
+               character.strRace = 2;
+               character.chaRace = 1;
+            }
+
+          else if (race =="Dwarf")
+            {
+                character.strRace = 2;
+                character.conRace = 2;
+            }
+
+            else if (race == "Elf")
+            {
+                character.dexRace = 2;
+                character.wisRace = 1;
+            }
+
+            else if (race == "Gnome")
+            {
+                character.intRace = 2;
+                character.conRace = 1;
+            }
+
+            else if (race == "Half-Elf")
+            {
+                character.chaRace = 2;
+                character.dexRace = 1;
+                character.conRace = 1;
+            }
+
+            else if (race == "Half-Orc")
+            {
+                character.strRace = 2;
+                character.conRace = 1;
+            }
+
+            else if (race == "Halfling")
+            {
+                character.dexRace = 2;
+                character.chaRace = 1;
+            }
+
+            else if (race == "Human")
+            {
+                character.strRace = 1;
+                character.dexRace = 1;
+                character.conRace = 1;
+                character.intRace = 1;
+                character.wisRace = 1;
+                character.chaRace = 1;
+            }
+
+            else if (race == "Tiefling")
+            {
+                character.chaRace = 2;
+                character.intRace = 1;
+            }
         }
 
     }

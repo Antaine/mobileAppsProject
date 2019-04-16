@@ -21,5 +21,11 @@ namespace dndCC.Models
         public int Wis { get; set; }
         public int Cha { get; set; }
 
+        public int strRace { get; set; }
+        public int dexRace { get; set; }
+        public int conRace { get; set; }
+        public int intRace { get; set; }
+        public int wisRace { get; set; }
+        public int chaRace { get; set; }
     }
 }

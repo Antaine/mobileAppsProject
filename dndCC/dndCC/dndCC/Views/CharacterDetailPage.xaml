@@ -14,14 +14,16 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         
         <StackLayout Spacing="10" Padding="15">
-            <StackLayout>
-                <Label Text="Character Name:" FontSize="Medium" />
-                <Label Text="{Binding Character.Name}" FontSize="Small" />
+            <StackLayout Grid.Row="1">
+                <StackLayout Grid.Column="0">
+                    <Label Text="Character Name:" FontSize="Medium" />
+                    <Label Text="{Binding Character.Name}" FontSize="Small" />
+                </StackLayout>
             </StackLayout>
             <Label Text="Character Race:" FontSize="Medium" />
             <Label Text="{Binding Character.Race}" FontSize="Small"/>
@@ -33,12 +35,20 @@
             <Label Text="{Binding Character.Align}" FontSize="Small"/>
             <Label Text="Level:" FontSize="Medium" />
             <Label Text="{Binding Character.Lvl}" FontSize="Small" />
+
+            <Label Text="Strength: "></Label>
             <Label Text="{Binding Character.Str}" FontSize="Small" />
+            <Label Text="Dexterity: "></Label>
             <Label Text="{Binding Character.Dex}" FontSize="Small" />
+            <Label Text="Constitution: "></Label>
             <Label Text="{Binding Character.Con}" FontSize="Small" />
-            <Label Text="{Binding Character.Wis}" FontSize="Small" />
+            <Label Text="Intelligence: "></Label>
             <Label Text="{Binding Character.Int}" FontSize="Small" />
+            <Label Text="Wisdom: "></Label>
+            <Label Text="{Binding Character.Wis}" FontSize="Small" />
+            <Label Text="Charisma: "></Label>
             <Label Text="{Binding Character.Cha}" FontSize="Small" />
+
         </StackLayout>
     </Grid>
 </ContentPage>

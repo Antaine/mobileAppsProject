@@ -21,8 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\StatsPage.xaml.cs">
-      <DependentUpon>StatsPage.xaml</DependentUpon>
+    <Compile Update="Views\classPage.xaml.cs">
+      <DependentUpon>ClassPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Wiki.xaml.cs">
+      <DependentUpon>Wiki.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\CharacterDetailPage.xaml.cs">
       <DependentUpon>CharacterDetailPage.xaml</DependentUpon>
@@ -33,5 +36,14 @@
     <Compile Update="Views\NewCharacterPage.xaml.cs">
       <DependentUpon>NewCharacterPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ClassPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RacePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
