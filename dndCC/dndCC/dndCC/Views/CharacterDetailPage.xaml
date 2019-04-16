@@ -3,19 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="dndCC.Views.ItemDetailPage"
              Title="{Binding Title}">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Character Name:" FontSize="Medium" />
-        <Label Text="{Binding Character.Name}" FontSize="Small"/>
-        <Label Text="Character Race:" FontSize="Medium" />
-        <Label Text="{Binding Character.Race}" FontSize="Small"/>
-        <Label Text="Character Class:" FontSize="Medium" />
-        <Label Text="{Binding Character.Class}" FontSize="Small"/>
-        <Label Text="Character Background:" FontSize="Medium" />
-        <Label Text="{Binding Character.Bg}" FontSize="Small"/>
-        <Label Text="Character Alignment:" FontSize="Medium" />
-        <Label Text="{Binding Character.Align}" FontSize="Small"/>
-        <Label Text="Level:" FontSize="Medium" />
-        <Label Text="{Binding Character.Lvl}" FontSize="Small"/>
-        <Button Text="Edit Stats" Clicked="statsClicked"/>
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackLayout Spacing="10" Padding="15">
+            <StackLayout>
+                <Label Text="Character Name:" FontSize="Medium" />
+                <Label Text="{Binding Character.Name}" FontSize="Small" />
+            </StackLayout>
+            <Label Text="Character Race:" FontSize="Medium" />
+            <Label Text="{Binding Character.Race}" FontSize="Small"/>
+            <Label Text="Character Class:" FontSize="Medium" />
+            <Label Text="{Binding Character.Class}" FontSize="Small"/>
+            <Label Text="Character Background:" FontSize="Medium" />
+            <Label Text="{Binding Character.Bg}" FontSize="Small"/>
+            <Label Text="Character Alignment:" FontSize="Medium" />
+            <Label Text="{Binding Character.Align}" FontSize="Small"/>
+            <Label Text="Level:" FontSize="Medium" />
+            <Label Text="{Binding Character.Lvl}" FontSize="Small" />
+            <Label Text="{Binding Character.Str}" FontSize="Small" />
+            <Label Text="{Binding Character.Dex}" FontSize="Small" />
+            <Label Text="{Binding Character.Con}" FontSize="Small" />
+            <Label Text="{Binding Character.Wis}" FontSize="Small" />
+            <Label Text="{Binding Character.Int}" FontSize="Small" />
+            <Label Text="{Binding Character.Cha}" FontSize="Small" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

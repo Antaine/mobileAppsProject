@@ -10,11 +10,11 @@ namespace dndCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatsPage : ContentPage
     {
-        CharactersViewModel viewModel;
+        StatsViewModel viewModel;
         public StatsPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new CharactersViewModel();
+            BindingContext = viewModel = new StatsViewModel();
         }
 
         async void OnCharacterSelected(object sender, SelectedItemChangedEventArgs args)
@@ -27,20 +27,22 @@ namespace dndCC.Views
 
             // Manually deselect item.
             //Chwck
-            CharactersListView.SelectedItem = null;
+          //  CharactersListView.SelectedItem = null;
         }
-        async void AddCharacter_Clicked(object sender, EventArgs e)
-        {
-            //Check
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
+        //async void AddCharacter_Clicked(object sender, EventArgs e)
+        //{
+        //    //Check
+        //    await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+        //}
+
+
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
             if (viewModel.Characters.Count == 0)
-                viewModel.LoadCharactersCommand.Execute(null);
+                viewModel.LoadStatsCommand.Execute(null);
         }
     }
 }

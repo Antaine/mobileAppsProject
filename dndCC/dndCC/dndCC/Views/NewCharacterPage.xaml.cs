@@ -22,7 +22,7 @@ namespace dndCC.Views
         string selectedAln;
         int selectedLvl;
 
-        public NewItemPage()
+        public NewItemPage(Character characterPass)
         {
             InitializeComponent();
 
@@ -154,6 +154,66 @@ namespace dndCC.Views
         {
             selectedLvl = Int32.Parse(lvlPicker.Items[lvlPicker.SelectedIndex]);
 
+        }
+
+        private int sortRoll(int roll1, int roll2, int roll3,int roll4)
+        {
+            int d1 = roll1;
+            int d2 = roll2;
+            int d3 = roll3;
+            int temp = roll4;
+            int total;
+            Console.WriteLine("Roll1 ",roll1," Roll2 ",roll2, "Roll3 ",roll3, "Roll4", roll4);
+            if (temp>d1)
+            {
+                d1 = temp;
+                temp = roll1;
+            }
+
+            if(temp>d2)
+            {
+                d2 = temp;
+                temp = roll2;
+            }
+
+            if(temp>d3)
+            {
+                d3 = temp;
+                
+            }
+
+            total = d1 + d2 + d3;
+            return total;
+        }
+
+        public int randomD6()
+        {
+            int min = 1;
+            int max = 7;
+            int d61;
+            int d62;
+            int d63;
+            int temp;
+            int total = 0;
+            Random random = new Random();
+
+            d61 = random.Next(min,max);
+            d62 = random.Next(min, max);
+            d63 = random.Next(min, max);
+            temp = random.Next(min, max);
+            total = sortRoll(d61,d62,d63,temp);
+
+            return total;
+        }
+
+        private void rollStats(object sender, EventArgs args)
+        {
+            Character.Str = randomD6();
+            Character.Dex = randomD6();
+            Character.Con = randomD6();
+            Character.Int = randomD6();
+            Character.Wis = randomD6();
+            Character.Cha = randomD6();
         }
 
     }

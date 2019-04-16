@@ -17,6 +17,7 @@ namespace dndCC.Views
     public partial class ItemsPage : ContentPage
     {
         CharactersViewModel viewModel;
+        Character characterPass;
 
         public ItemsPage()
         {
@@ -28,6 +29,7 @@ namespace dndCC.Views
         async void OnCharacterSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var character = args.SelectedItem as Character;
+            characterPass = character;
             if (character == null)
                 return;
 
@@ -41,7 +43,8 @@ namespace dndCC.Views
         async void AddCharacter_Clicked(object sender, EventArgs e)
         {
             //Check
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            //var character = args.SelectedItem as Character;
+            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage(characterPass)));
         }
 
         protected override void OnAppearing()

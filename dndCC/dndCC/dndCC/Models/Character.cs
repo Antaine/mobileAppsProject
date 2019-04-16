@@ -13,6 +13,13 @@ namespace dndCC.Models
         public int Lvl { get; set; }
         //Display Details
         public string displayDetails { get { return Name + " the " + Race + " " + Class; } }
-        
+
+        public int Str { get; set; }
+        public int Dex { get; set; }
+        public int Con { get; set; }
+        public int Int { get; set; }
+        public int Wis { get; set; }
+        public int Cha { get; set; }
+
     }
 }

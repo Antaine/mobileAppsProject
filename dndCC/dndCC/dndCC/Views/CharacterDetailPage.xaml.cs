@@ -36,6 +36,7 @@ namespace dndCC.Views
 
         private async void statsClicked(object sender, EventArgs e)
         {
+
             await Navigation.PushAsync(new StatsPage());
         }
     }

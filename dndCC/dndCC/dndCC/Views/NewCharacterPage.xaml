@@ -48,6 +48,7 @@
                 <Picker x:Name="lvlPicker" Title="Level:" FontSize="Small" SelectedIndexChanged="onLvlSelected">
                 </Picker>
             </StackLayout>
+            <Button Text="Roll" Clicked="rollStats" />
         </StackLayout>
 
     </ContentPage.Content>

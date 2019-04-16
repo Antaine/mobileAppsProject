@@ -4,9 +4,7 @@
              x:Class="dndCC.Views.StatsPage"
              xmlns:vm="clr-namespace:dndCC.ViewModels"
              Title="{Binding Title}">
-    
-
-    
+        
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatible with Xamarin Live Player -->
@@ -17,11 +15,30 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <ListView x:Name="CharactersListView"
+        <!--<StackLayout>
+            <Label Text="Character Name:" FontSize="Medium" />
+            <Label Text="{Binding Character.Name}" FontSize="Small" />
+        </StackLayout>
+        <Label Text="Character Race:" FontSize="Medium" />
+        <Label Text="{Binding Character.Race}" FontSize="Small"/>
+        <Label Text="Character Class:" FontSize="Medium" />
+        <Label Text="{Binding Character.Class}" FontSize="Small"/>
+        <Label Text="Character Background:" FontSize="Medium" />
+        <Label Text="{Binding Character.Bg}" FontSize="Small"/>
+        <Label Text="Character Alignment:" FontSize="Medium" />
+        <Label Text="{Binding Character.Align}" FontSize="Small"/>
+        <Label Text="Level:" FontSize="Medium" />
+        <Label Text="{Binding Character.Lvl}" FontSize="Small" />-->
+
+        <!--<Button Text="Edit Stats" Clicked="statsClicked"/>-->
+    </StackLayout>
+
+</ContentPage>
+<!--<ListView x:Name="CharactersListView"
                 ItemsSource="{Binding Characters}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
-                RefreshCommand="{Binding LoadCharactersCommand}"
+                RefreshCommand="{Binding LoadStatsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
@@ -33,10 +50,9 @@
                             <Label Text="{Binding displayDetails}"                                  
                                 Style="{DynamicResource ListCharacterTextStyle}" 
                                 FontSize="16" />
+                            <Label Text="Test"></Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-</ContentPage>
+        </ListView>-->
