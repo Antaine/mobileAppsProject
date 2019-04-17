@@ -14,17 +14,19 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <StackLayout Spacing="10" Padding="15">
+
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="15"  Orientation="Vertical" VerticalOptions="FillAndExpand" >
             <StackLayout Grid.Row="1">
                 <StackLayout Grid.Column="0">
                     <Label Text="Character Name:" FontSize="Medium" />
                     <Label Text="{Binding Character.Name}" FontSize="Small" />
                 </StackLayout>
+                
             </StackLayout>
+                
             <Label Text="Character Race:" FontSize="Medium" />
             <Label Text="{Binding Character.Race}" FontSize="Small"/>
             <Label Text="Character Class:" FontSize="Medium" />
@@ -50,5 +52,6 @@
             <Label Text="{Binding Character.Cha}" FontSize="Small" />
 
         </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

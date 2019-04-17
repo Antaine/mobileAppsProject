@@ -52,9 +52,6 @@ namespace dndCC.Views
                 viewModel.LoadStatsCommand.Execute(null);
         }
 
-        private void racesClicked()
-        {
 
-        }
     }
 }

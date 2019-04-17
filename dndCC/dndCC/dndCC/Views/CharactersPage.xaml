@@ -14,7 +14,8 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <ScrollView >
+        <StackLayout Spacing="10" Padding="15"  Orientation="Vertical" VerticalOptions="FillAndExpand" >
         <ListView x:Name="CharactersListView"
                 ItemsSource="{Binding Characters}"
                 VerticalOptions="FillAndExpand"
@@ -38,4 +39,5 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
+        </ScrollView >
 </ContentPage>

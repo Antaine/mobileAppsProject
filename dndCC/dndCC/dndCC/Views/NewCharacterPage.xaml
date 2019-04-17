@@ -22,31 +22,33 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Name:" FontSize="Medium" />
-            <Entry Text="{Binding Character.Name}" FontSize="Small" />
-            <StackLayout>
-                <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="onRaceSelected">
-                </Picker>
+        <ScrollView >
+            <StackLayout Spacing="20" Padding="15" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <Label Text="Name:" FontSize="Medium" />
+                <Entry Text="{Binding Character.Name}" FontSize="Small" />
+                <StackLayout>
+                    <Picker x:Name="racePicker" Title="Race:" FontSize="Small" SelectedIndexChanged="onRaceSelected">
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Picker x:Name="classPicker" Title="Class:" FontSize="Small" SelectedIndexChanged="onClassSelected">
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Picker x:Name="bgPicker" Title="Background:" FontSize="Small" SelectedIndexChanged="onBgSelected">
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Picker x:Name="alnPicker" Title="Alignment:" FontSize="Small" SelectedIndexChanged="onAlnSelected">
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Picker x:Name="lvlPicker" Title="Level:" FontSize="Small" SelectedIndexChanged="onLvlSelected">
+                    </Picker>
+                </StackLayout>
+                <Button Text="Roll" Clicked="rollStats" />
             </StackLayout>
-            <StackLayout>
-                <Picker x:Name="classPicker" Title="Class:" FontSize="Small" SelectedIndexChanged="onClassSelected">
-                </Picker>
-            </StackLayout>
-            <StackLayout>
-                <Picker x:Name="bgPicker" Title="Background:" FontSize="Small" SelectedIndexChanged="onBgSelected">
-                </Picker>
-            </StackLayout>
-            <StackLayout>
-                <Picker x:Name="alnPicker" Title="Alignment:" FontSize="Small" SelectedIndexChanged="onAlnSelected">
-                </Picker>
-            </StackLayout>
-            <StackLayout>
-                <Picker x:Name="lvlPicker" Title="Level:" FontSize="Small" SelectedIndexChanged="onLvlSelected">
-                </Picker>
-            </StackLayout>
-            <Button Text="Roll" Clicked="rollStats" />
-        </StackLayout>
+        </ScrollView> 
 
     </ContentPage.Content>
 </ContentPage>

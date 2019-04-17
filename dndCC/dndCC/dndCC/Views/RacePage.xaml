@@ -1,12 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="dndCC.Views.RacePage">
+             x:Class="dndCC.Views.RacePage"
+             xmlns:vm="clr-namespace:dndCC.ViewModels"
+            
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+        <!--Page Level Resources: Compatible with Xamarin Live Player -->
+        <Color x:Key="Primary">#2196F3</Color>
+        <Color x:Key="Accent">#96d1ff</Color>
+        <Color x:Key="LightTextColor">#999999</Color>
+    </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0">
+                <Label Text="Dragonborn: Str +2, Cha +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="0">
+                <Label Text="Dwarf: Str +2, Con +2"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="1">
+                <Label Text="Elf: Dex +2, Wis + 1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="1">
+                <Label Text="Gnome: Int +2, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="2">
+                <Label Text="Half-Elf: Cha +2, Dex +1, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="2">
+                <Label Text="Half-Orc: Str +2, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="3">
+                <Label Text="Halfling: Dex +2, Cha +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="3">
+                <Label Text="Human: All +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+                <Label Text="Tiefling: Cha +2, Int +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

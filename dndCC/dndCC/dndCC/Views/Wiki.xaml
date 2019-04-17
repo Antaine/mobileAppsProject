@@ -4,41 +4,88 @@
              x:Class="dndCC.Views.Wiki"
              xmlns:vm="clr-namespace:dndCC.ViewModels"
              Title="{Binding Title}">
-        
+
     <ContentPage.Resources>
+
         <ResourceDictionary>
             <!--Page Level Resources: Compatible with Xamarin Live Player -->
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#283747
+            </Color>
             <Color x:Key="Accent">#96d1ff</Color>
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
-        <!--<Button Text="Races" Clicked="OnRaceClicked"/>-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+        <Button Text="Races" Clicked="OnRaceClicked"/>
         <!--<Button Text="Classes" Clicked="classesClicked"/>-->
     </StackLayout>
 
+
+        <StackLayout Grid.Column="0" Grid.Row="0">
+            <Label Text="Dragonborn: Str +2, Cha +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Grid.Column="1" Grid.Row="0">
+            <Label Text="Dwarf: Str +2, Con +2"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="0" Grid.Row="1">
+            <Label Text="Elf: Dex +2, Wis + 1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Grid.Column="1" Grid.Row="1">
+            <Label Text="Gnome: Int +2, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="0" Grid.Row="2">
+            <Label Text="Half-Elf: Cha +2, Dex +1, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Grid.Column="1" Grid.Row="2">
+            <Label Text="Half-Orc: Str +2, Con +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="0" Grid.Row="3">
+            <Label Text="Halfling: Dex +2, Cha +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Grid.Column="1" Grid.Row="3">
+            <Label Text="Human: All +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+            <Label Text="Tiefling: Cha +2, Int +1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+    </Grid>
+
 </ContentPage>
-<!--<ListView x:Name="CharactersListView"
-                ItemsSource="{Binding Characters}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadStatsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
-                ItemSelected="OnCharacterSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding displayDetails}"                                  
-                                Style="{DynamicResource ListCharacterTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="Test"></Label>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
