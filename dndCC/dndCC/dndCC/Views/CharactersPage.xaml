@@ -13,7 +13,7 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-
+<!--View Characters-->
     <ScrollView >
         <StackLayout Spacing="10" Padding="15"  Orientation="Vertical" VerticalOptions="FillAndExpand" >
         <ListView x:Name="CharactersListView"

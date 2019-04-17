@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 
 namespace dndCC.Views
 {
+    //Menu
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {

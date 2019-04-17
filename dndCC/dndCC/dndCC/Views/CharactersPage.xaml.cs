@@ -13,6 +13,7 @@ using dndCC.ViewModels;
 
 namespace dndCC.Views
 {
+    //Load  Characters
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace dndCC.Views
 {
-
+    //Takes User input and saves it
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public partial class NewItemPage : ContentPage
@@ -173,6 +173,7 @@ namespace dndCC.Views
             int d3 = roll3;
             int temp = roll4;
             int total;
+            //Sort 4d6 into bestt 3d6
             Console.WriteLine("Roll1 ",roll1," Roll2 ",roll2, "Roll3 ",roll3, "Roll4", roll4);
             if (temp>d1)
             {
@@ -207,28 +208,32 @@ namespace dndCC.Views
             int total = 0;
             Random random = new Random();
 
+            //Roll 4d6 and add the best 3
             d61 = random.Next(min,max);
             d62 = random.Next(min, max);
             d63 = random.Next(min, max);
             temp = random.Next(min, max);
             total = sortRoll(d61,d62,d63,temp);
-
+            //Return total
             return total;
         }
 
         private void rollStats(object sender, EventArgs args)
         {
+            //Generate Stats
             Character.Str = randomD6();
             Character.Dex = randomD6();
             Character.Con = randomD6();
             Character.Int = randomD6();
             Character.Wis = randomD6();
             Character.Cha = randomD6();
+            //Add racial bonus
             addRaceBonus(Character);
         }
 
         private void addRaceBonus(Character character)
         {
+            //Based on race add bonuses
             string race = character.Race;
             if (race == "Dragonborn")
             {
@@ -288,6 +293,13 @@ namespace dndCC.Views
                 character.chaRace = 2;
                 character.intRace = 1;
             }
+
+            character.Str += character.strRace;
+            character.Dex += character.dexRace;
+            character.Con += character.conRace;
+            character.Int += character.intRace;
+            character.Wis += character.wisRace;
+            character.Cha += character.chaRace;
         }
 
 
@@ -305,19 +317,7 @@ namespace dndCC.Views
             IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
         }
 
-        public async static Task<bool> IsFolderExistAsync(this string folderName, IFolder rootFolder = null)
-        {
-            // get hold of the file system  
-            IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(folderName);
-            // already run at least once, don't overwrite what's there  
-            if (folderexist == ExistenceCheckResult.FolderExists)
-            {
-                return true;
 
-            }
-            return false;
-        }
     }
 
 }

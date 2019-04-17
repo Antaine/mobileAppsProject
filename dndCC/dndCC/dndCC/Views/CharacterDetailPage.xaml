@@ -17,6 +17,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <!--Character Details-->
         <ScrollView>
             <StackLayout Spacing="10" Padding="15"  Orientation="Vertical" VerticalOptions="FillAndExpand" >
             <StackLayout Grid.Row="1">
