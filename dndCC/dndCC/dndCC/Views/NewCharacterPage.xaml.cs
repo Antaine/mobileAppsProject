@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Media;
 namespace dndCC.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class NewItemPage : ContentPage
     {
         public static Xamarin.Forms.Keyboard Numeric { get; }
@@ -21,6 +22,7 @@ namespace dndCC.Views
         string selectedBg;
         string selectedAln;
         int selectedLvl;
+
 
         public NewItemPage(Character characterPass)
         {
