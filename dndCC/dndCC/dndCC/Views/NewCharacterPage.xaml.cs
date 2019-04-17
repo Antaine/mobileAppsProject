@@ -7,14 +7,18 @@ using Xamarin.Forms.Xaml;
 using dndCC.Models;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Media;
-
+using PCLStorage;
+using dndCC.Services;
+using System.Threading.Tasks;
 
 namespace dndCC.Views
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public partial class NewItemPage : ContentPage
     {
+        IFolder folder = FileSystem.Current.LocalStorage;
         public static Xamarin.Forms.Keyboard Numeric { get; }
         public Character Character { get; set; }
         string selectedRace;
@@ -22,6 +26,8 @@ namespace dndCC.Views
         string selectedBg;
         string selectedAln;
         int selectedLvl;
+
+
 
 
         public NewItemPage(Character characterPass)
@@ -284,6 +290,34 @@ namespace dndCC.Views
             }
         }
 
+
+        async void createFolder()
+        {
+            String folderName = "CharacterFolder";
+            IFolder folder = FileSystem.Current.LocalStorage;
+            folder = await folder.CreateFolderAsync(folderName, CreationCollisionOption.ReplaceExisting);
+        }
+
+        async void createFile(Character characterPass)
+        {
+            String filename = characterPass.Name.ToString() + ".txt";
+            IFolder folder = FileSystem.Current.LocalStorage;
+            IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+        }
+
+        public async static Task<bool> IsFolderExistAsync(this string folderName, IFolder rootFolder = null)
+        {
+            // get hold of the file system  
+            IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
+            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(folderName);
+            // already run at least once, don't overwrite what's there  
+            if (folderexist == ExistenceCheckResult.FolderExists)
+            {
+                return true;
+
+            }
+            return false;
+        }
     }
 
 }
